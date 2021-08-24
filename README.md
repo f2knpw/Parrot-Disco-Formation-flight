@@ -51,7 +51,7 @@ all the communications either use the regular SC2/Chuck Wifi of each Disco AND a
 
 ## Installation
 
-- Unzip contents (the extraction process automatically creates a new folder "disco4g-parachute_1.2_modf2knpw"
+- Unzip contents (the extraction process automatically creates a new folder "disco4g-parachute_1.2_mod_f2knpw"
 - Ensure Disco and Skycontroller 2 are on the latest Parrot firmware supported by Disco4G, if required you can up-/downgrade the firmware manually (see details for Disco here and Skycontroller 2 here).
 - Ensure there is sufficient storage available on the Disco. This softmod only requires 10 MB, however it will not work if 100% of the internal storage is used by videos. This can be checked in FreeFlight Pro.
 - Turn on your Disco 
@@ -61,7 +61,7 @@ all the communications either use the regular SC2/Chuck Wifi of each Disco AND a
 - Use an FTP tool (e.g. FileZilla) to upload the softmod to your Disco.
   - Connect via FTP to 192.168.42.1 (no username/password required)
   - You have to set the transfer type to Binary (not ASCII). In FileZilla under Edit → Settings... → Transfers → FTP: File Types → Default transfer type → change from Auto to Binary.
-  - Transfer the "disco4g-parachute_1.2_modf2knpw" folder to the "/internal_000" folder on the Disco.
+  - Transfer the "disco4g-parachute_1.2_mod_f2knpw" folder to the "/internal_000" folder on the Disco.
 - On Disco firmware 1.7.0 and newer : Double press the Disco's power button to enable the telnet server.
 - Open a Command Prompt (Windows)/Terminal (macOS/Linux) and Copy/Paste the following commands manually (line by line) to install the softmod.
   - telnet 192.168.42.1 
