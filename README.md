@@ -85,7 +85,7 @@ Configure your board:
 ![alt tag](https://user-images.githubusercontent.com/31324055/130609812-a025bba7-605e-4f81-893b-c6ab7943f85f.png)
 
 - in this example the board is running on Wroom module, is  a Slave, its Disco SSID is DISCO_JP2
-- you can change the board from "Wroom32" using pin 13 for SBUS output to "Lolin32 lite" using PIN 23
+- you can change the board from "Wroom32" using pin 13 for SBUS output to "Lolin32 lite" using pin 23
 - you can configure DISCO_IS_MASTER as Master or slave or "TEST_NOSLAVE" (simple data logger connected to YOUR_SSID)
 
 
@@ -97,7 +97,9 @@ plug each ESP32 into each chuck. If you use a regular servo wire then beware of 
 ![alt tag](https://user-images.githubusercontent.com/31324055/130612221-cafb50f8-abfd-4096-9ad7-987a0ff1a66d.png)
 ![alt tag](https://user-images.githubusercontent.com/31324055/130611957-f5c899c2-9503-4155-9329-baf9b98b0901.png)
 
-For easy connection on WROOM32 module you may have to swap the pins
+For easy connection on WROOM32 module you may have to swap the pins...
+
+now, start up your discos, start up your skycontrollers. When everything is green, double press on the chucks buttons to enable telnet.
 
 ## Contact/Contribute
 
