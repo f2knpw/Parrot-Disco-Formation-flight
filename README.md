@@ -52,6 +52,8 @@ all the communications either use the regular SC2/Chuck Wifi of each Disco AND a
 ## Installation
 to install the mod Please see Wiki article [Installation](https://github.com/uavpal/disco4g/wiki/Installation).
 
+To be writen
+
 ## How to fly  (User Manual)
 to be writen
 
