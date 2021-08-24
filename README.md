@@ -73,6 +73,8 @@ to install the soft mod Please see Wiki article [Installation](https://github.co
 - reboot
 - Turn off Skycontroller 2 manually
 
+if everything is ok you should see something like this :
+![alt tag](https://user-images.githubusercontent.com/31324055/130605174-70636e3d-c44f-495c-85f4-29d3393018de.png)
 
 ## How to fly  (User Manual)
 to be writen
