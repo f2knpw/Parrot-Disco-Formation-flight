@@ -31,6 +31,7 @@ Then the ESP32 of the master Disco insures to send these values to all the slave
 
 all the communications either use the regular SC2/Chuck Wifi of each Disco AND an ESP-Now communication Master/slave(s) is put in place to tranfer telemtry and sticks values to the slaves.
 
+![alt tag](https://user-images.githubusercontent.com/31324055/130592459-87fde9ee-8b97-44d8-9ed9-da6b29600971.png)
 
 
 ## Requirements
