@@ -109,7 +109,7 @@ to exit  press right trigger or enter into loiter (left stick horizontal)
 To capture telemetry, the disco must first take off in "autopilot mode". On ground, without propeller, press the button on the SC2, it will try to take off and quit 10s after...
 So you can press the button to take off, immediatlely, go to manual mode (A + right trigger). Then the telemetry (of the master) will be sent to any slave
 
-Currently I did mix master and slaves sticks on the slave to demonstrate that the slave is controlled by its Skycontroller + the master's one !
+Currently I do mix master and slave sticks, on the slave, to demonstrate that the slave is controlled by its Skycontroller + the master's one !
 
 Work in progress... Don't fly with this now !
 
