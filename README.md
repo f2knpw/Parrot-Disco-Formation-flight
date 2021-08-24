@@ -97,9 +97,20 @@ plug each ESP32 into each chuck. If you use a regular servo wire then beware of 
 ![alt tag](https://user-images.githubusercontent.com/31324055/130612221-cafb50f8-abfd-4096-9ad7-987a0ff1a66d.png)
 ![alt tag](https://user-images.githubusercontent.com/31324055/130612826-c2084de8-428c-41df-bc2e-31286539a0f7.png)
 
-For easy connection on WROOM32 module you may have to swap the pins...
+For easy connection on WROOM32 module you may have to swap the red and black pins on the ESP32 side...
 
 now, start up your discos, start up your skycontrollers. When everything is green, double press on the chucks buttons to enable telnet.
+
+For the moment do not fly with this mod... when pressing right trigger + A on the SkyController, the disco goes into fully manual mode.
+DO NOT FLY WITH MANUAL MODE
+to exit  press right trigger or enter into loiter (left stick horizontal)
+
+To capture telemetry, the disco must forst take off in "autopilot mode" press the button on the SC2, it will try to take off and quit 10s after...
+So you can press the button to take off, immediatlely, go to manual mode (A + right trigger). Then the telemetry (of the master) will be sent to any slave
+
+Currently I did mix master and slaves sticks on the slave to demonstrate that the slave is controled by its Skycontroller PLUS the master's one !
+
+Work in progress... Don't fly with this now !
 
 ## Contact/Contribute
 
