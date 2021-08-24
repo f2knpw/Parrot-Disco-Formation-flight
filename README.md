@@ -9,7 +9,7 @@ Disco4G is a software modification (softmod) for the Parrot Disco drone. Instead
 
 [![Youtube video](https://uavpal.com/img/yt_thumbail_github.png)](https://www.youtube.com/watch?v=e9Xl3tTwReQ)
 ![Disco4G softmod](https://image.ibb.co/eP6A3c/disco4glte.jpg)
-
+![alt tag](https://user-images.githubusercontent.com/31324055/130589754-dc2da2e0-f366-434d-aad8-24c96b2bab09.png)
 
 
 ## Community
