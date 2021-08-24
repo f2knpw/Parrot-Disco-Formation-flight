@@ -7,7 +7,7 @@ fly multiple Disco wings with skycontrollers and in formation
 ## About
 Disco4G is a software modification (softmod) for the Parrot Disco drone. 
 
-My mod uses Disco4g (which must be installed) and more specifically the Dailyknowmores's parachute mod fork.
+My mod uses Disco4g and more specifically the Dailyknowmores's parachute mod fork (V1.2). 
 
 
 
@@ -16,14 +16,14 @@ My mod uses Disco4g (which must be installed) and more specifically the Dailykno
 
 
 ## Why?
-- simply for fun and to try to fly several Disco controller by a "master one"
+- simply for fun and to try to fly several Disco controlled by a "master one"
 
 ## How does it work?
-Two scripts are added to this "parachute mod" in order to:
-1) capture the Skycontroller2 buttons and sticks values and to send them to the ESP32 board.
-2) capture the .pud telemetry of the chuck and to send it to the ESP32 board
+Two scripts are added to the "parachute mod" in order:
+1) spysc2.sh: to capture the Skycontroller2 buttons and sticks values and to send them to the ESP32 board.
+2) pud2ESP32.sh: to capture the .pud telemetry of the chuck and to send it to the ESP32 board
 
-3) Then the ESP32 of the master Disco insures to send these values to all the slave(s) Disco(s).
+3) Then the ESP32 of the master Disco takes care to send these values to all the slave(s) Disco(s).
 
 
 
