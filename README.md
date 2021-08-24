@@ -42,7 +42,7 @@ all the communications either use the regular SC2/Chuck Wifi of each Disco AND a
 *Hardware:*
 - [Parrot Disco](https://www.parrot.com/us/drones/parrot-disco) 
 - Parrot Skycontroller 2 
-- ESP32 boards to put into each disco
+- ESP32 boards to put into each disco: https://www.espressif.com/en/products/modules/esp32
 
 *Software:*
 - FreeFlight Pro App on tablet/phone (can be the same device providing Wi-Fi tethering)
@@ -79,6 +79,7 @@ all the communications either use the regular SC2/Chuck Wifi of each Disco AND a
 if everything is ok you should see something like this :
 ![alt tag](https://user-images.githubusercontent.com/31324055/130605174-70636e3d-c44f-495c-85f4-29d3393018de.png)
 
+Now it's time to compile your ESP32 code
 
 
 ## How to fly  (User Manual)
