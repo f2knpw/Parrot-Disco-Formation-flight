@@ -90,7 +90,7 @@ Configure your board:
 
 
 ## How to fly  (User Manual)
-pl
+plug each ESP32 into each chuck
 
 ## Contact/Contribute
 
