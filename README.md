@@ -55,8 +55,8 @@ to be writen
 
 ## Special Thanks to
 - UAVPAL community :
-Join our [UAVPAL Slack workspace](https://uavpal.com/slack) or check out the [issue section](https://github.com/uavpal/disco4g/issues) here on GitHub.\
-Email: <img valign="bottom" src="https://image.ibb.co/mK4krx/uavpalmail2.png"> (please do not use email for issues/troubleshooting help. Join our Slack community instead!)
+Join our [UAVPAL Slack workspace](https://uavpal.com/slack) 
+(please do not use email for issues/troubleshooting help. Join our Slack community instead!)
 
 - Parachute mod Dailyknowmore : https://github.com/dailyknowmore
 
