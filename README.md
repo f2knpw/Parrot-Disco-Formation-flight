@@ -113,6 +113,8 @@ Currently I do mix master and slave sticks, on the slave, to demonstrate that th
 
 Work in progress... Don't fly with this now !
 
+[![Youtube video]](https://www.youtube.com/watch?v=CVJP1KOo54M)
+
 ## Contact/Contribute
 
 
