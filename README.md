@@ -19,9 +19,9 @@ My mod uses Disco4g and more specifically the Dailyknowmores's parachute mod for
 - simply for fun and to try to fly several Disco(s) controlled by a "master one"
 
 ## How does it work?
-Two scripts are added to the "parachute mod" in order:
-1) spysc2.sh: to capture the Skycontroller2 buttons and sticks values and to send them to the ESP32 board.
-2) pud2ESP32.sh: to capture the .pud telemetry of the chuck and to send it to the ESP32 board
+Two scripts are added to the "parachute mod" in order :
+1) spysc2.sh : to capture the Skycontroller2 buttons and sticks values and to send them to the ESP32 board.
+2) pud2ESP32.sh  to capture the .pud telemetry of the chuck and to send it to the ESP32 board
 
 3) Then the ESP32 of the master Disco takes care to send these values to all the slave(s) Disco(s).
 
@@ -80,7 +80,7 @@ if everything is ok you should see something like this :
 ![alt tag](https://user-images.githubusercontent.com/31324055/130605174-70636e3d-c44f-495c-85f4-29d3393018de.png)
 
 Now it's time to compile your ESP32 code. Open the ino file into the ESP32 directory
-Configure your board:
+- Configure your board:
 
 ![alt tag](https://user-images.githubusercontent.com/31324055/130609812-a025bba7-605e-4f81-893b-c6ab7943f85f.png)
 
@@ -123,4 +123,4 @@ Join our [UAVPAL Slack workspace](https://uavpal.com/slack)
 - Parachute mod Dailyknowmore : https://github.com/dailyknowmore
 
 ## Disclaimer
-This is still a VERY EXPERIMENTAL modification! Mod and fly your Disco at YOUR OWN RISK!!!
+This is still a VERY EXPERIMENTAL modification ! Mod and fly your Disco at YOUR OWN RISK!!!
