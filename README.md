@@ -50,9 +50,8 @@ all the communications either use the regular SC2/Chuck Wifi of each Disco AND a
 - ESP32 software installed on each Disco
 
 ## Installation
-to install the soft mod Please see Wiki article [Installation](https://github.com/uavpal/disco4g/wiki/Installation).
 
-- Unzip contents (the extraction process automatically creates a new folder "disco4g-master" or "disco4g-x.y", where by x.y is the release version number)
+- Unzip contents (the extraction process automatically creates a new folder "disco4g-parachute_1.2_modf2knpw"
 - Ensure Disco and Skycontroller 2 are on the latest Parrot firmware supported by Disco4G, if required you can up-/downgrade the firmware manually (see details for Disco here and Skycontroller 2 here).
 - Ensure there is sufficient storage available on the Disco. This softmod only requires 10 MB, however it will not work if 100% of the internal storage is used by videos. This can be checked in FreeFlight Pro.
 - Turn on your Disco 
@@ -66,10 +65,11 @@ to install the soft mod Please see Wiki article [Installation](https://github.co
 - On Disco firmware 1.7.0 and newer : Double press the Disco's power button to enable the telnet server.
 - Open a Command Prompt (Windows)/Terminal (macOS/Linux) and Copy/Paste the following commands manually (line by line) to install the softmod.
   - telnet 192.168.42.1 
+  - mount -o remount,rw /
   - mv /data/ftp/internal_000/disco4g-* /tmp/disco4g
   - mv /tmp/disco4g/disco/logsc2.sh logsc2.sh
   - mv /tmp/disco4g/disco/pud2ESP.sh pud2ESP.sh
-  - chmod +x /*.sh
+  - chmod +x ./*.sh
   - chmod +x /tmp/disco4g/*/*_install.sh
   - /tmp/disco4g/disco/disco_install.sh
   - /tmp/disco4g/skycontroller2/skycontroller2_install.sh
@@ -78,6 +78,8 @@ to install the soft mod Please see Wiki article [Installation](https://github.co
 
 if everything is ok you should see something like this :
 ![alt tag](https://user-images.githubusercontent.com/31324055/130605174-70636e3d-c44f-495c-85f4-29d3393018de.png)
+
+
 
 ## How to fly  (User Manual)
 to be writen
