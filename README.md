@@ -90,7 +90,14 @@ Configure your board:
 
 
 ## How to fly  (User Manual)
-plug each ESP32 into each chuck
+plug each ESP32 into each chuck. If you use a regular servo wire then beware of the polarities...
+- Red wire is 5V
+- white (or yellow) wire is SBus out pin
+- black wire is Gnd
+![alt tag](https://user-images.githubusercontent.com/31324055/130612221-cafb50f8-abfd-4096-9ad7-987a0ff1a66d.png)
+![alt tag](https://user-images.githubusercontent.com/31324055/130611957-f5c899c2-9503-4155-9329-baf9b98b0901.png)
+
+For easy connection on WROOM32 module you may have to swap the pins
 
 ## Contact/Contribute
 
