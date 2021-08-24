@@ -67,6 +67,9 @@ to install the soft mod Please see Wiki article [Installation](https://github.co
 - Open a Command Prompt (Windows)/Terminal (macOS/Linux) and Copy/Paste the following commands manually (line by line) to install the softmod.
   - telnet 192.168.42.1 
   - mv /data/ftp/internal_000/disco4g-* /tmp/disco4g
+  - mv /tmp/disco4g/disco/logsc2.sh logsc2.sh
+  - mv /tmp/disco4g/disco/pud2ESP.sh pud2ESP.sh
+  - chmod +x /*.sh
   - chmod +x /tmp/disco4g/*/*_install.sh
   - /tmp/disco4g/disco/disco_install.sh
   - /tmp/disco4g/skycontroller2/skycontroller2_install.sh
