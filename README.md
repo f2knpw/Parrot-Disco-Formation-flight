@@ -23,7 +23,7 @@ Two scripts are added to this "parachute mod" in order to:
 1) capture the Skycontroller2 buttons and sticks values and to send them to the ESP32 board.
 2) capture the .pud telemetry of the chuck and to send it to the ESP32 board
 
-Then the ESP32 of the master Disco insures to send these values to all the slave(s) Disco(s).
+3) Then the ESP32 of the master Disco insures to send these values to all the slave(s) Disco(s).
 
 
 
@@ -32,6 +32,10 @@ Then the ESP32 of the master Disco insures to send these values to all the slave
 all the communications either use the regular SC2/Chuck Wifi of each Disco AND an ESP-Now communication Master/slave(s) is put in place to tranfer telemtry and sticks values to the slaves.
 
 ![alt tag](https://user-images.githubusercontent.com/31324055/130593977-acc94515-f512-46ca-b4f2-8be1f4e9244f.png)
+
+4) Finally, the ESP32 can take the control of the Disco by sending SBUS command to the servo plug.
+
+![alt tag](https://user-images.githubusercontent.com/31324055/130594409-b91f91dd-b71b-4440-a797-20d06bb220e1.png)
 
 
 ## Requirements
