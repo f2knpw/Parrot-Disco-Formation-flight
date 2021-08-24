@@ -84,7 +84,7 @@ Now it's time to compile your ESP32 code. Open the ino file into the ESP32 direc
 
 ![alt tag](https://user-images.githubusercontent.com/31324055/130609812-a025bba7-605e-4f81-893b-c6ab7943f85f.png)
 
-- in this example the board is running on Wroom module, is  a Slave, its Disco SSID is DISCO_JP2
+- in this example the board is running on Wroom module, is  a Slave, its Disco SSID is DISCO-JP2
 - you can change the board from "Wroom32" using pin 13 for SBUS output to "Lolin32 lite" using pin 23
 - you can configure DISCO_IS_MASTER as Master or slave or "TEST_NOSLAVE" (simple data logger connected to YOUR_SSID)
 
