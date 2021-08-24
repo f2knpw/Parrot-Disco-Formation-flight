@@ -24,9 +24,12 @@ Two scripts are added to this mod in order to:
 
 Then the ESP32 of the master Disco insures to send these values to all the slave(s) Disco.
 
-all the coomunications either use the regular SC2/Chuck Wifi of each Disco AND an ESP-Now communication Master/slave(s) is put in place in real time
+
 
 ![alt tag](https://user-images.githubusercontent.com/31324055/130589754-dc2da2e0-f366-434d-aad8-24c96b2bab09.png)
+
+all the coomunications either use the regular SC2/Chuck Wifi of each Disco AND an ESP-Now communication Master/slave(s) is put in place in real time
+
 
 
 ## Requirements
