@@ -65,11 +65,11 @@ to install the soft mod Please see Wiki article [Installation](https://github.co
   - Transfer the "disco4g-master" or "disco4g-x.y" folder to the "/internal_000" folder on the Disco.
 - On Disco firmware 1.7.0 and newer : Double press the Disco's power button to enable the telnet server.
 - Open a Command Prompt (Windows)/Terminal (macOS/Linux) and Copy/Paste the following commands manually (line by line) to install the softmod.
-  telnet 192.168.42.1 
-  mv /data/ftp/internal_000/disco4g-* /tmp/disco4g
-  chmod +x /tmp/disco4g/*/*_install.sh
-  /tmp/disco4g/disco/disco_install.sh
-  /tmp/disco4g/skycontroller2/skycontroller2_install.sh
+  - telnet 192.168.42.1 
+  - mv /data/ftp/internal_000/disco4g-* /tmp/disco4g
+  - chmod +x /tmp/disco4g/*/*_install.sh
+  - /tmp/disco4g/disco/disco_install.sh
+  - /tmp/disco4g/skycontroller2/skycontroller2_install.sh
 - reboot
 - Turn off Skycontroller 2 manually
 
