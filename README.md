@@ -90,7 +90,7 @@ Now it's time to compile your ESP32 code. Open the ino file into the ESP32 direc
 
 
 ## How to fly  (User Manual)
-plug each ESP32 into each chuck. If you use a regular servo wire then beware of the polarities...
+plug each ESP32 into each chuck. If you use a regular servo wire then beware at the polarities...
 - Red wire is 5V
 - white (or yellow) wire is SBus out pin
 - black wire is Gnd
