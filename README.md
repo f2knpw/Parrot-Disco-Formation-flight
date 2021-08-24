@@ -16,7 +16,7 @@ My mod uses Disco4g and more specifically the Dailyknowmores's parachute mod for
 
 
 ## Why?
-- simply for fun and to try to fly several Disco controlled by a "master one"
+- simply for fun and to try to fly several Disco(s) controlled by a "master one"
 
 ## How does it work?
 Two scripts are added to the "parachute mod" in order:
