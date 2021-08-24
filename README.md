@@ -19,11 +19,11 @@ My mod uses Disco4g (which must be installed) and more specifically the Dailykno
 - simply for fun and to try to fly several Disco controller by a "master one"
 
 ## How does it work?
-Two scripts are added to this mod in order to:
+Two scripts are added to this "parachute mod" in order to:
 1) capture the Skycontroller2 buttons and sticks values and to send them to the ESP32 board.
 2) capture the .pud telemetry of the chuck and to send it to the ESP32 board
 
-Then the ESP32 of the master Disco insures to send these values to all the slave(s) Disco.
+Then the ESP32 of the master Disco insures to send these values to all the slave(s) Disco(s).
 
 
 
