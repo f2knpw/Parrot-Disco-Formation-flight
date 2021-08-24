@@ -94,6 +94,7 @@ plug each ESP32 into each chuck. If you use a regular servo wire then beware of 
 - Red wire is 5V
 - white (or yellow) wire is SBus out pin
 - black wire is Gnd
+
 ![alt tag](https://user-images.githubusercontent.com/31324055/130612221-cafb50f8-abfd-4096-9ad7-987a0ff1a66d.png)
 ![alt tag](https://user-images.githubusercontent.com/31324055/130612826-c2084de8-428c-41df-bc2e-31286539a0f7.png)
 
