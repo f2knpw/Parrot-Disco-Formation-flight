@@ -113,9 +113,8 @@ Currently I do mix master and slave sticks, on the slave, to demonstrate that th
 
 Work in progress... Don't fly with this now !
 
-https://www.youtube.com/watch?v=CVJP1KOo54M
-Parrot Disco formation flying project (video#2) - YouTube
 
+[![Youtube video](https://user-images.githubusercontent.com/31324055/130622251-cab2022b-a267-4065-ab9f-2c0453a6855a.png)](https://www.youtube.com/watch?v=CVJP1KOo54M)
 
 ## Contact/Contribute
 
