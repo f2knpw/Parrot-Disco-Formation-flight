@@ -61,7 +61,7 @@ all the communications either use the regular SC2/Chuck Wifi of each Disco AND a
 - Use an FTP tool (e.g. FileZilla) to upload the softmod to your Disco.
   - Connect via FTP to 192.168.42.1 (no username/password required)
   - You have to set the transfer type to Binary (not ASCII). In FileZilla under Edit → Settings... → Transfers → FTP: File Types → Default transfer type → change from Auto to Binary.
-  - Transfer the "disco4g-master" or "disco4g-x.y" folder to the "/internal_000" folder on the Disco.
+  - Transfer the "disco4g-parachute_1.2_modf2knpw" folder to the "/internal_000" folder on the Disco.
 - On Disco firmware 1.7.0 and newer : Double press the Disco's power button to enable the telnet server.
 - Open a Command Prompt (Windows)/Terminal (macOS/Linux) and Copy/Paste the following commands manually (line by line) to install the softmod.
   - telnet 192.168.42.1 
