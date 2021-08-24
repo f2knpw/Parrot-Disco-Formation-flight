@@ -42,11 +42,11 @@ all the communications either use the regular SC2/Chuck Wifi of each Disco AND a
 *Hardware:*
 - [Parrot Disco](https://www.parrot.com/us/drones/parrot-disco) 
 - Parrot Skycontroller 2 
-- ESP32 boards to put into each disco: https://www.espressif.com/en/products/modules/esp32
+- ESP32 boards to put into each disco : https://www.espressif.com/en/products/modules/esp32
 
 *Software:*
-- FreeFlight Pro App on tablet/phone (can be the same device providing Wi-Fi tethering)
-- LTE disco4g-parachute mod branch 1.2 installed on every Disco: https://github.com/dailyknowmore/disco4g_parachute/tree/v1.2_parachute
+- FreeFlight Pro App on tablet/phone (optionnal as you can fly without phone !)
+- LTE disco4g-parachute mod from THIS repo installed on every Disco
 - ESP32 software installed on each Disco
 
 ## Installation
