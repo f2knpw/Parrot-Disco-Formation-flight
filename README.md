@@ -124,4 +124,4 @@ Join our [UAVPAL Slack workspace](https://uavpal.com/slack)
 - Parachute mod Dailyknowmore : https://github.com/dailyknowmore
 
 ## Disclaimer
-This is still a VERY EXPERIMENTAL modification ! Mod and fly your Disco at YOUR OWN RISK!!!
+This is still a VERY EXPERIMENTAL modification ! Mod and DON'T fly your Disco at YOUR OWN RISK!!!
