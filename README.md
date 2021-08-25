@@ -100,7 +100,10 @@ plug each ESP32 into each chuck. If you use a regular servo wire then beware at 
 
 For easy connection on WROOM32 module you may have to swap the red and black pins on the ESP32 side...
 
-now, start up your discos, start up your skycontrollers. When everything is green, double press on the chucks buttons to enable telnet.
+now, start up your disco master, start up its skycontroller. When everything is green, double press on the chuck button to enable telnet.
+Launch the Disco Master and take control of it (see below).
+Then, start up your disco slave, start up its skycontroller. When everything is green, double press on the chuck button to enable telnet.
+Launch the Disco slave and take control of it (see below).
 
 For the moment do not fly with this mod... when pressing right trigger + A on the SkyController, the disco goes into fully manual mode.
 DO NOT FLY WITH MANUAL MODE
