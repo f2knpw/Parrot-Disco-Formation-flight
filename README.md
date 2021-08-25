@@ -48,6 +48,7 @@ all the communications either use the regular SC2/Chuck Wifi of each Disco AND a
 - FreeFlight Pro App on tablet/phone (optionnal as you can fly without phone !)
 - LTE disco4g-parachute mod from THIS repo installed on every Disco
 - ESP32 software installed on each Disco
+- IMPORTANT : for ESP-Now to work togheter with the Wifi of the chuck the WiFi cg=hannels of the Master and the Slave(s) must be the same. Go to FreeFlightPro App into network settings. Select manual mode and choose the channel.
 
 ## Installation
 
