@@ -150,6 +150,12 @@ To capture telemetry, the disco must first take off in "autopilot mode". On grou
 So you can press the button to take off. Immediatlely, go to manual mode (A + right trigger). Then the telemetry (of the master) will be sent to any slave
 
 Currently I do mix master and slave sticks, on the slave, to demonstrate that the slave is controlled by its Skycontroller + the master's one !
+```C
+  int tmpSticks[4];
+  tmpSticks[ROLL] = sticks[ROLL] + tmDiscoMaster.stickRoll;
+  tmpSticks[PITCH] = sticks[PITCH] + tmDiscoMaster.stickPitch;
+  tmpSticks[THROTTLE] = sticks[THROTTLE] + tmDiscoMaster.stickThrottle;
+```
 
 Work in progress... Don't fly with this now !
 
