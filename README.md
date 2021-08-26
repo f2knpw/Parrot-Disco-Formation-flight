@@ -89,6 +89,11 @@ Now it's time to compile your ESP32 code. Open the ino file into the ESP32 direc
 - you can change the board from "Wroom32" using pin 13 for SBUS output to "Lolin32 lite" using pin 23
 - you can configure DISCO_IS_MASTER as Master or slave or "TEST_NOSLAVE" (simple data logger connected to YOUR_SSID)
 
+a quite long technical video tries to explain how thngs work !
+
+https://youtu.be/ChHpNSgCJQM
+
+[![Youtube video](https://user-images.githubusercontent.com/31324055/130829759-a00961b5-5282-4027-9bcf-3817e4336374.png)](https://www.youtube.com/watch?v=vNzbKqds0i8)
 
 ## How to fly  (User Manual)
 plug each ESP32 into each chuck. If you use a regular servo wire then beware at the polarities...
