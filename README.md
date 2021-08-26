@@ -38,6 +38,13 @@ all the communications either use the regular SC2/Chuck Wifi of each Disco AND a
 ![alt tag](https://user-images.githubusercontent.com/31324055/130594409-b91f91dd-b71b-4440-a797-20d06bb220e1.png)
 
 
+This quite long and technical video tries to explain how things work !
+
+[![Youtube video](https://user-images.githubusercontent.com/31324055/130919196-f50ac59a-359b-44cf-b96b-cc61b080cfc7.png)](https://www.youtube.com/watch?v=ChHpNSgCJQM8)
+
+
+
+
 ## Requirements
 *Hardware :*
 - [Parrot Disco](https://www.parrot.com/us/drones/parrot-disco) 
@@ -89,9 +96,7 @@ Now it's time to compile your ESP32 code. Open the ino file into the ESP32 direc
 - you can change the board from "Wroom32" using pin 13 for SBUS output to "Lolin32 lite" using pin 23
 - you can configure DISCO_IS_MASTER as Master or slave or "TEST_NOSLAVE" (simple data logger connected to YOUR_SSID)
 
-This quite long and technical video tries to explain how things work !
 
-[![Youtube video](https://user-images.githubusercontent.com/31324055/130919196-f50ac59a-359b-44cf-b96b-cc61b080cfc7.png)](https://www.youtube.com/watch?v=ChHpNSgCJQM8)
 
 ## How to fly  (User Manual)
 plug each ESP32 into each chuck. If you use a regular servo wire then beware at the polarities...
