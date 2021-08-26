@@ -94,6 +94,34 @@ Now it's time to compile your ESP32 code. Open the ino file into the ESP32 direc
 
 ![alt tag](https://user-images.githubusercontent.com/31324055/130609812-a025bba7-605e-4f81-893b-c6ab7943f85f.png)
 
+```
+#define WROOM32 //uncomment this line for WROOM32 board
+
+//#define DISCO_IS_MASTER 	//uncomment if this Disco is the master (followMe)
+							//comment if this Disco is a slave (will follow the Master)
+
+//#define TEST_NOSLAVE  //test mode without slave disco (router  + MASTER + ESPNOW) (comment also DISCO_IS_MASTER)
+
+//#define DEBUG_SPYSC2
+//#define DEBUG_PUD2ESP
+//#define DEBUG_ESPNOW
+
+#define WATCHDOG_VALUE 6000000  //watchdog protection on SC2 sticks reception expressed in ms
+
+#ifdef DISCO_IS_MASTER
+const char* ssid     = "DISCO-JP";
+const char* password = "";
+#else
+#ifdef TEST_NOSLAVE
+const char* ssid     = "YOUR_SSID";
+const char* password = "YOUR_PASSWORD";
+#else
+const char* ssid     = "DISCO-JP2";
+const char* password = "";
+#endif
+#endif
+```
+
 - in this example the board is running on Wroom module, is  a Slave, its Disco SSID is DISCO-JP2
 - you can change the board from "Wroom32" using pin 13 for SBUS output to "Lolin32 lite" using pin 23
 - you can configure DISCO_IS_MASTER as Master or slave or "TEST_NOSLAVE" (simple data logger connected to YOUR_SSID)
