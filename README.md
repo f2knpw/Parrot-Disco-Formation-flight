@@ -94,7 +94,7 @@ Now it's time to compile your ESP32 code. Open the ino file into the ESP32 direc
 
 ![alt tag](https://user-images.githubusercontent.com/31324055/130609812-a025bba7-605e-4f81-893b-c6ab7943f85f.png)
 
-```
+```C
 #define WROOM32 //uncomment this line for WROOM32 board
 
 //#define DISCO_IS_MASTER 	//uncomment if this Disco is the master (followMe)
