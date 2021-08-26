@@ -15,10 +15,10 @@ My mod uses Disco4g and more specifically the Dailyknowmores's parachute mod for
 [![UAVPAL Slack Workspace](https://uavpal.com/img/slack.png)](https://uavpal.com/slack)
 
 
-## Why?
+## Why ?
 - simply for fun and to try to fly several Disco(s) controlled by a "master one"
 
-## How does it work?
+## How does it work ?
 Two scripts are added to the "parachute mod" in order :
 1) spysc2.sh : to capture the Skycontroller2 buttons and sticks values and to send them to the ESP32 board.
 2) pud2ESP32.sh  to capture the .pud telemetry of the chuck and to send it to the ESP32 board
