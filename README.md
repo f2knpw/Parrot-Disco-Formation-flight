@@ -62,7 +62,7 @@ This quite long and technical video tries to explain how things work !
 - Unzip contents (the extraction process automatically creates a new folder "disco4g-parachute_1.2_mod_f2knpw"
 - Ensure Disco and Skycontroller 2 are on the latest Parrot firmware supported by Disco4G, if required you can up-/downgrade the firmware manually (see details for Disco here and Skycontroller 2 here).
 - Ensure there is sufficient storage available on the Disco. This softmod only requires 10 MB, however it will not work if 100% of the internal storage is used by videos. This can be checked in FreeFlight Pro.
-- Turn on your Disco 
+- Turn on your Disco
 - Ensure no device is plugged into Skycontroller 2 via USB cable.
 - Turn on Skycontroller 2 and wait until it's connected to the Disco via Wi-Fi (green LED).
 - Connect your PC's WiFi to the Disco (e.g. DISCO-123456).
