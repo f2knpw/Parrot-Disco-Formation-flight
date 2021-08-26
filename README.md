@@ -55,7 +55,7 @@ This quite long and technical video tries to explain how things work !
 - FreeFlight Pro App on tablet/phone (optionnal as you can fly without phone !)
 - LTE disco4g-parachute mod from THIS repo installed on every Disco
 - ESP32 software installed on each Disco
-- IMPORTANT : for ESP-Now to work togheter with the Wifi of the chuck the WiFi cg=hannels of the Master and the Slave(s) must be the same. Go to FreeFlightPro App into network settings. Select manual mode and choose the channel.
+- **IMPORTANT** : for ESP-Now to work togheter with the Wifi of the chuck **the WiFi channels of the Master and the Slave(s) must be the same**. Go to FreeFlightPro App into network settings. Select manual mode and choose the channel.
 
 ## Installation
 
@@ -99,7 +99,7 @@ Now it's time to compile your ESP32 code. Open the ino file into the ESP32 direc
 
 
 ## How to fly  (User Manual)
-plug each ESP32 into each chuck. If you use a regular servo wire then beware at the polarities...
+plug each ESP32 into each chuck. If you use a regular servo wire then **beware at the polarities...**
 - Red wire is 5V
 - white (or yellow) wire is SBus out pin
 - black wire is Gnd
@@ -115,7 +115,7 @@ Then, start up your disco slave, start up its skycontroller. When everything is 
 Launch the Disco slave and take control of it (see below).
 
 For the moment do not fly with this mod... when pressing right trigger + A on the SkyController, the disco goes into fully manual mode.
-DO NOT FLY WITH MANUAL MODE
+**DO NOT FLY WITH MANUAL MODE**
 to exit  press right trigger or enter into loiter (left stick horizontal)
 
 To capture telemetry, the disco must first take off in "autopilot mode". On ground, without propeller, press the button on the SC2, it will try to take off and quit 10s after...
