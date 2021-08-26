@@ -76,8 +76,8 @@ This quite long and technical video tries to explain how things work !
   telnet 192.168.42.1 
   mount -o remount,rw /
   mv /data/ftp/internal_000/disco4g-* /tmp/disco4g
-  mv /tmp/disco4g/disco/logsc2.sh /logsc2.sh
-  mv /tmp/disco4g/disco/pud2ESP.sh /pud2ESP.sh
+  mv /tmp/disco4g/disco/logsc2.sh ./logsc2.sh
+  mv /tmp/disco4g/disco/pud2ESP.sh ./pud2ESP.sh
   chmod +x /*.sh
   chmod +x /tmp/disco4g/*/*_install.sh
   /tmp/disco4g/disco/disco_install.sh
