@@ -1,3 +1,11 @@
+// freedom2000's ESP32 disco formation flying project (july 2021)
+// **************************************************************
+
+// - based on Parachute mod (for the evtest command)
+// V0.00 : 210720 : first alpha release
+// V0.01 : 210826 : first alpha public release
+//***************************************************************
+
 #include <WiFi.h>
 #include <WiFiUdp.h>
 #include <esp_now.h>
@@ -30,7 +38,7 @@ const char* password = "";
 #endif
 
 IPAddress local_IP(192, 168, 42, 25);
-IPAddress gateway(192, 168, 42, 1);XXXXXXXXXXXXXXXXXXXXXXXXXXXX
+IPAddress gateway(192, 168, 42, 1);
 IPAddress subnet(255, 255, 255, 0);
 IPAddress primaryDNS(8, 8, 8, 8); //optional
 IPAddress secondaryDNS(8, 8, 4, 4); //optional
