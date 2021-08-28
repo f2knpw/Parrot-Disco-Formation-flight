@@ -4,6 +4,7 @@
 // - based on Parachute mod (for the evtest command)
 // V0.00 : 210720 : first alpha release
 // V0.01 : 210826 : first alpha public release
+// V0.02 : 210826 : added slave to master distance and bearinng computation
 //***************************************************************
 
 #include <WiFi.h>
@@ -11,16 +12,27 @@
 #include <esp_now.h>
 #include <esp_wifi.h>
 
-#define WROOM32 //uncomment this line for WROOM32 board
 
-//#define DISCO_IS_MASTER 	//uncomment if this Disco is the master (followMe)
-							//comment if this Disco is a slave (will follow the Master)
+#define OLED  //comment if no OLED display attached
+
+#if defined OLED
+#include "SSD1306.h"
+#define OLED_SCL 17
+#define OLED_SDA 16
+SSD1306  display(0x3c, OLED_SDA, OLED_SCL);// for 0.96" 128x64 LCD display ; i2c ADDR & SDA, SCL
+#endif
+
+//#define WROOM32 //uncomment this line for WROOM32 board
+
+//#define DISCO_IS_MASTER   //uncomment if this Disco is the master (followMe)
+//comment if this Disco is a slave (will follow the Master)
 
 //#define TEST_NOSLAVE  //test mode without slave disco (router  + MASTER + ESPNOW) (comment also DISCO_IS_MASTER)
 
 //#define DEBUG_SPYSC2
 //#define DEBUG_PUD2ESP
 //#define DEBUG_ESPNOW
+#define DEBUG_POSITIONS
 
 #define WATCHDOG_VALUE 6000000  //watchdog protection on SC2 sticks reception expressed in ms
 
@@ -130,10 +142,27 @@ typedef struct telemetry {
   int stickPitch;
   int stickThrottle;
 };
-// Create a struct_message called myData
 telemetry tmDisco;
 telemetry tempDisco;
 telemetry tmDiscoMaster;
+boolean isNewMasterTm;
+boolean isNewDiscoTm;
+
+typedef struct locationVector {
+  long time;
+  double longitude ;
+  double latitude;
+  float Vx;
+  float Vy;
+  double estimateLongitude;
+  double estimateLatitude;
+};
+locationVector currentMasterLocation;
+locationVector currentSlaveLocation;
+#define DEG2RAD  PI/180.
+#define RAD2DEG  180./PI
+long slave2masterDistance;
+float slave2masterBearing;
 
 // Set the SLAVE MAC Address
 //uint8_t slaveAddress[] = {0x24, 0x0A, 0xC4, 0x5A, 0x6E, 0x58};  //send to single slave
@@ -165,6 +194,7 @@ void OnRecv(const uint8_t * mac, const uint8_t *incomingData, int len) {
   Serial.print("\t");
   Serial.println(tmDiscoMaster.stickThrottle);
 #endif
+  isNewMasterTm = true;
 }
 #endif
 
@@ -219,6 +249,19 @@ void setup()
   trims[0] =  preferences.getInt("trimRoll", 0);
   trims[1] =  preferences.getInt("trimPitch", 0);
   trims[2] =  preferences.getInt("trimThrottle", 0);
+
+  //LCD
+#if defined OLED
+  display.init();
+  display.flipScreenVertically();
+  display.setFont(ArialMT_Plain_10);
+
+  display.clear();
+  display.setTextAlignment(TEXT_ALIGN_LEFT);
+  display.setFont(ArialMT_Plain_16);
+  display.drawString(0, 10, "Disco");
+  display.display();
+#endif
 
   WiFi.mode(WIFI_AP_STA);
 #ifndef TEST_NOSLAVE
@@ -320,6 +363,20 @@ void setup()
   connectionStatus = 6; //skip all connection process
 #endif
 }
+
+#ifdef OLED
+void displayScreen(String text1, String text2, String text3 )
+{
+  display.clear();
+  display.setTextAlignment(TEXT_ALIGN_LEFT);
+  display.setFont(ArialMT_Plain_16);
+  display.drawString(0, 10, text1);
+  display.drawString(0, 30,  text2);
+  display.drawString(0, 45, text3);
+  display.display();
+}
+#endif
+
 
 void loop()
 {
@@ -609,7 +666,7 @@ void loop()
           tmDisco.stickRoll = sticks[ROLL];
           tmDisco.stickPitch = sticks[PITCH];
           tmDisco.stickThrottle = sticks[THROTTLE];
-
+          isNewDiscoTm = true;
 #ifdef DEBUG_PUD2ESP
           Serial.print(tmDisco.time);
           Serial.print("\t");
@@ -641,6 +698,67 @@ void loop()
     default:
       break;
   }
+
+  //trajectory computation on slave
+#ifndef DISCO_IS_MASTER
+  if (isNewMasterTm) //update currentMasterLocation
+  {
+    isNewMasterTm = false;
+    if ((tmDiscoMaster.longitude != currentMasterLocation.longitude) || (tmDiscoMaster.latitude != currentMasterLocation.latitude)) //new GPS point
+    {
+      currentMasterLocation.longitude = tmDiscoMaster.longitude;  //refresh position when new GSP point is coming
+      currentMasterLocation.latitude = tmDiscoMaster.latitude;
+      currentMasterLocation.time = millis();
+      currentMasterLocation.estimateLongitude = tmDiscoMaster.longitude;
+      currentMasterLocation.estimateLatitude = tmDiscoMaster.latitude;
+      currentMasterLocation.Vx = tmDiscoMaster.Vx;
+      currentMasterLocation.Vy = tmDiscoMaster.Vy;
+    }
+  }
+  if (isNewDiscoTm)//update currentSlaveLocation
+  {
+    isNewDiscoTm = false;
+    if ((tmDisco.longitude != currentSlaveLocation.longitude) || (tmDisco.latitude != currentSlaveLocation.latitude)) //new GPS point
+    {
+      currentSlaveLocation.longitude = tmDisco.longitude;  //refresh position when new GSP point is coming
+      currentSlaveLocation.latitude = tmDisco.latitude;
+      //currentSlaveLocation.time = millis();
+      currentSlaveLocation.estimateLongitude = tmDisco.longitude;
+      currentSlaveLocation.estimateLatitude = tmDisco.latitude;
+      currentSlaveLocation.Vx = tmDisco.Vx;
+      currentSlaveLocation.Vy = tmDisco.Vy;
+    }
+//    if (((millis() - currentSlaveLocation.time) > 1000) && RCmode)
+//    {
+//      RCmode = false; //slave tm is lost force exit RCmode
+//      currentSlaveLocation.time = millis();
+//    }
+//    currentSlaveLocation = computeEstimatePos(currentSlaveLocation);  //estimate slave position between GPS points at "now" time
+//
+//    if (((millis() - currentMasterLocation.time) > 1000) && RCmode)
+//    {
+//      RCmode = false; //master tm is lost force exit RCmode
+//      currentMasterLocation.time = millis();
+//    }
+//    currentMasterLocation = computeEstimatePos(currentMasterLocation); //estimate master position between GPS points at "now" time
+
+    //now positions are synchronized, we can compute distances
+    slave2masterDistanceBearing();
+#ifdef DEBUG_POSITIONS
+    Serial.print("slave2master distance bearing" );
+    Serial.print("\t");
+    Serial.print(slave2masterDistance);
+    Serial.print("\t");
+    Serial.println(slave2masterBearing);
+    String text1, text2, text3;
+    text1 = "slave 2 master "+ String(RCmode);
+    text2 = "distance " + String(slave2masterDistance);
+    text3 = "bearing " + String(slave2masterBearing);
+    displayScreen(text1, text2, text3 );
+#endif
+  }
+
+#endif
 
   //detect RCmode
   if (buttons[PINKIE_RIGHT] == 1)      //RCmode toggle on with both pinkie and A
@@ -691,6 +809,7 @@ void loop()
     watchdog = millis();
   }
 
+
   //channels mixing
 
 
@@ -736,6 +855,51 @@ void loop()
   {
     ledcWrite(1,  0); //just to flash the blue led
   }
+}
+
+locationVector computeEstimatePos (locationVector pos)
+{
+  //  "Drone's speed changed.Expressed in the NED referential (North-East-Down)."
+  //  "speedX" Speed relative to the North (when drone moves to the north, speed is > 0) (in m/s)
+  //  "speedY" Speed relative to the East (when drone moves to the east, speed is > 0) (in m/s)
+  //  "speedZ" Speed on the z axis (when drone moves down, speed is > 0) (in m/s)
+
+  double lat1, lat2, lon1, lon2;
+  float Vx, Vy;
+  float deltaT;  //s
+  deltaT = (millis() - pos.time) / 1000.; //simply compute time between now and previous sample
+  lat1 = pos.estimateLatitude;
+  lon1 = pos.estimateLongitude;
+  Vx = pos.Vx;
+  Vy = pos.Vy;
+
+  lat2 = lat1 + Vx * deltaT / 111111 ; //111111 m = 1° latitude when traveling on a meridian
+  lon2 = lon1 + Vy * deltaT / (111111 * cos(lat1 * 3.14159 / 180.));
+  pos.estimateLatitude = lat2;
+  pos.estimateLongitude = lon2;
+  pos.time = millis();
+  return pos;
+}
+
+
+// find the bearing and distance in meters from point 1 to 2,
+// using the equirectangular approximation
+void slave2masterDistanceBearing(void)
+{
+  double dlam, dphi, radius = 6371000.0;
+
+  dphi = DEG2RAD * (currentSlaveLocation.estimateLatitude + currentMasterLocation.estimateLatitude) / 2; //average latitude in radians
+  double cphi = cos(dphi);
+
+  dphi = DEG2RAD * (currentMasterLocation.estimateLatitude - currentSlaveLocation.estimateLatitude); //differences in degrees (to radians)
+  dlam = DEG2RAD * (currentMasterLocation.estimateLongitude - currentSlaveLocation.estimateLongitude);
+
+  dlam *= cphi;  //correct for latitude
+
+  slave2masterBearing = RAD2DEG * atan2(dlam, dphi);
+  if (slave2masterBearing < 0) slave2masterBearing = slave2masterBearing + 360.0;
+
+  slave2masterDistance = radius * sqrt(dphi * dphi + dlam * dlam);
 }
 
 float decomFloat(int index)
