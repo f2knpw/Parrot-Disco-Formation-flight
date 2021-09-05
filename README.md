@@ -162,9 +162,9 @@ Work in progress... Don't fly with this now !
 
 [![Youtube video](https://user-images.githubusercontent.com/31324055/130829759-a00961b5-5282-4027-9bcf-3817e4336374.png)](https://www.youtube.com/watch?v=vNzbKqds0i8)
 
-**[edit 210904]** I have performed ESP-Now range tests between a master and a slave disco "on ground". The ESP32 are original ones with their pcb antenna. They are "packed" into the disco behind the batteries.
-Range is far below the advertized 400m. I can safely reach 75m bt not more without loss of packets.
-75m is enough to test the formation flight !
+**[edit 210904]** I have performed ESP-Now range tests between a master (flying) and a slave disco "on ground". The ESP32 are original ones with their pcb antenna. They are "packed" into the disco behind the batteries.
+Range is below the advertized 400m. I can safely reach 130m but not more without loss of packets.
+130m is enough to test the formation flight !
 Currently I have implemented some "failsafe" checks :
 if no telemetry comming from the master or no sticks cpatured from the slave, then I switch to Skycontroller2 mode on the slave.
 If not then I can go on flying with the "radio controlled assisted mode" on the slave.
